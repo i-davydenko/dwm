@@ -108,11 +108,15 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-        { 0,                XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
-	{ 0,                       XF86XK_AudioMute, spawn, {.v = mutevol } },
-	{ 0,                XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
-        { 0,                 XF86XK_MonBrightnessUp, spawn, {.v = inc_backlight } },
-	{ 0,               XF86XK_MonBrightnessDown, spawn, {.v = dec_backlight } },
+
+	/* * * * * * * * * * * * * * * * * * * * * * * * * AUDIO * * * * * * * * * * * * * * * * * * * * * * * * */
+        { 0,                XF86XK_AudioLowerVolume, spawn, {.v = downvol } },            /* Audio down  */
+	{ 0,                XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },            /* Audio up */
+	{ 0,                       XF86XK_AudioMute, spawn, {.v = mutevol } },            /* Audio mute */
+
+	/* * * * * * * * * * * * * * * * * * * * * * * * * DISPLAY * * * * * * * * * * * * * * * * * * * * * * * */
+        { 0,                 XF86XK_MonBrightnessUp, spawn, {.v = inc_backlight } },      /* laptop bright up */
+	{ 0,               XF86XK_MonBrightnessDown, spawn, {.v = dec_backlight } },      /* laptop bright down */
 
 };
 
