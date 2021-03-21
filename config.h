@@ -65,9 +65,9 @@ static const char *termcmd[] = { "st", NULL };
 static const char *browser[] = { "firefox", NULL };
 
 /* Sound keys config */
-static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
-static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
-static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
+static const char *upvol[]   = { "pamixer", "--allow-boost", "-i", "5", NULL };
+static const char *downvol[] = { "pamixer", "--allow-boost", "-d", "5", NULL };
+static const char *mutevol[] = { "pamixer", "--allow-boost", "-t", NULL };
 
 static const char *inc_backlight[] = { "brightnessctl", "-d", "intel_backlight", "set", "+5%", NULL };
 static const char *dec_backlight[] = { "brightnessctl", "-d", "intel_backlight", "set", "5%-", NULL };
